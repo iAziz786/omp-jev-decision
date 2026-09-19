@@ -1,8 +1,18 @@
 {
   "name": "@iaziz786/omp-jev-decision",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "omp extension that adds a `decide` tool backed by TypeSafe System One (Jev): typed choice / noul / score questions over any state, answered with probabilities and confidence.",
-  "keywords": ["pi-package", "extension", "omp", "typesafe", "jev", "decide", "judge", "classifier", "router"],
+  "keywords": [
+    "pi-package",
+    "extension",
+    "omp",
+    "typesafe",
+    "jev",
+    "decide",
+    "judge",
+    "classifier",
+    "router"
+  ],
   "type": "module",
   "license": "MIT",
   "author": "Mohammad Aziz",
@@ -12,7 +22,11 @@
     "url": "git+ssh://git@github.com/iAziz786/omp-jev-decision.git"
   },
   "main": "./dist/index.js",
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -29,6 +43,8 @@
     "prepublishOnly": "bun run build && bun test"
   },
   "pi": {
-    "extensions": ["./dist/index.js"]
+    "extensions": [
+      "./dist/index.js"
+    ]
   }
 }
