@@ -39,6 +39,8 @@
   },
   "scripts": {
     "build": "bun build ./index.ts --outdir ./dist --target node --format esm --external '@oh-my-pi/*'",
+    "eval": "bun eval/run.ts",
+    "eval:dry": "bun eval/run.ts --dry-run",
     "test": "bun test",
     "prepublishOnly": "bun run build && bun test"
   },
