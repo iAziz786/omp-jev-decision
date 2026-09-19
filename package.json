@@ -1,6 +1,6 @@
 {
   "name": "@iaziz786/omp-jev-decision",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "omp extension that adds a `decide` tool backed by TypeSafe System One (Jev): typed choice / noul / score questions over any state, answered with probabilities and confidence.",
   "keywords": [
     "pi-package",
