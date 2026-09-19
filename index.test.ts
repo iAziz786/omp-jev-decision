@@ -69,7 +69,6 @@ describe("decide tool", () => {
     const tool = createDecisionTool();
     expect(tool.name).toBe("decide");
     expect(tool.approval).toBe("read");
-    expect(tool.description).toContain("noul");
   });
 
   test("schema keeps typed questions and rejects an unknown type", () => {

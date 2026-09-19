@@ -4,7 +4,8 @@
  * The tool answers typed questions about any state — `choice` (pick one of a
  * fixed set), `noul` (probability a yes/no condition holds), `score` (position
  * on ordered levels) — in one pass, with probabilities instead of prose. It is
- * the on-demand counterpart of the judgments omp already makes internally.
+ * the on-demand counterpart of the judgments omp already makes internally, for
+ * picks, gates and judgments on small decisions around a stronger model.
  *
  * Endpoint and credentials come from the shared `TYPESAFE_*` block (see
  * decision.ts) — the same block omp's built-in TypeSafe judge reads — so both
@@ -123,11 +124,21 @@ export function createDecisionTool(options: DecisionToolOptions = {}): DecisionT
   return {
     name: "decide",
     label: "Decide (Jev)",
-    description:
-      "Ask a decision model (TypeSafe System One / Jev) typed questions about a piece of state and get typed answers back: " +
-      "`choice` picks one option from the `options` you define, `noul` returns the probability of a yes/no condition, `score` places the state on ordered `levels`. " +
-      "Answers carry probabilities (and a confidence where applicable). " +
-      "Use it for classification, routing, triage, thresholds or guardrails that a chat model would otherwise answer in prose; it cannot generate text, so ask narrow questions rather than compound ones, and batch independent questions into one call.",
+    description: `Typed questions about one piece of state, answered with probabilities: call it for the small picks, gates and judgments a chat model would otherwise guess in prose.
+
+<conditions>
+- Best on small, repeated decisions around a stronger model: which route or tool, keep vs drop, done vs not done, noise vs signal, urgency, policy gates.
+- Prefer it over prose whenever a label, threshold or probability would otherwise have to be parsed back out of a sentence.
+</conditions>
+
+<instruction>
+- Batch independent questions into one call: each is answered on its own, with a probability (plus confidence where applicable), so you can gate on the margin instead of the argmax alone.
+- One call judges one state; call again for the next state. It is a single fast pass billed on input only, so several narrow questions cost less than one broad question.
+</instruction>
+
+<critical>
+- Not a chat model: it generates no text and answers only the questions you pass. Never make it the main reasoner, and never fold several asks into one ("explain and fix").
+</critical>`,
     parameters: decisionSchema,
     approval: "read",
     async execute(_toolCallId, params, signal) {
