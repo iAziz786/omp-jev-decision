@@ -13,6 +13,9 @@
   },
   "main": "./dist/index.js",
   "files": ["dist", "README.md", "LICENSE"],
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20.0.0"
   },
