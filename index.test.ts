@@ -64,10 +64,10 @@ describe("toQuestions", () => {
   });
 });
 
-describe("decision tool", () => {
-  test("registers as a read-tier tool named `decision`", () => {
+describe("decide tool", () => {
+  test("registers as a read-tier tool named `decide`", () => {
     const tool = createDecisionTool();
-    expect(tool.name).toBe("decision");
+    expect(tool.name).toBe("decide");
     expect(tool.approval).toBe("read");
     expect(tool.description).toContain("noul");
   });

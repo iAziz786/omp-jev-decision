@@ -1,5 +1,5 @@
 /**
- * omp extension: a `decision` tool backed by TypeSafe System One (Jev).
+ * omp extension: a `decide` tool backed by TypeSafe System One (Jev).
  *
  * The tool answers typed questions about any state — `choice` (pick one of a
  * fixed set), `noul` (probability a yes/no condition holds), `score` (position
@@ -98,7 +98,7 @@ export interface DecisionToolOptions {
   config?: DecisionConfig;
 }
 
-/** The `decision` tool contract, as the harness sees it. */
+/** The `decide` tool contract, as the harness sees it. */
 export type DecisionTool = ToolDefinition<typeof decisionSchema, DecisionResult>;
 
 /** Tool text: the answers plus what produced them, so cost and confidence stay visible. */
@@ -119,11 +119,11 @@ function renderDecision(result: DecisionResult): string {
   );
 }
 
-/** The `decision` tool; exported so tests can drive it with a stubbed transport. */
+/** The `decide` tool; exported so tests can drive it with a stubbed transport. */
 export function createDecisionTool(options: DecisionToolOptions = {}): DecisionTool {
   return {
-    name: "decision",
-    label: "Decision (Jev)",
+    name: "decide",
+    label: "Decide (Jev)",
     description:
       "Ask a decision model (TypeSafe System One / Jev) typed questions about a piece of state and get typed answers back: " +
       "`choice` picks one option from the `options` you define, `noul` returns the probability of a yes/no condition, `score` places the state on ordered `levels`. " +

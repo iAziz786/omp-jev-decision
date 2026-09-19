@@ -1,6 +1,6 @@
 # omp-jev-decision
 
-[omp](https://omp.sh) extension that adds a `decision` tool backed by
+[omp](https://omp.sh) extension that adds a `decide` tool backed by
 [TypeSafe](https://www.typesafe.ai) System One ("Jev") — a model that generates no
 prose, only typed answers.
 

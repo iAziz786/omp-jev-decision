@@ -1,8 +1,8 @@
 {
   "name": "@iaziz786/omp-jev-decision",
   "version": "0.1.0",
-  "description": "omp extension that adds a `decision` tool backed by TypeSafe System One (Jev): typed choice / noul / score questions over any state, answered with probabilities and confidence.",
-  "keywords": ["pi-package", "extension", "omp", "typesafe", "jev", "decision", "judge", "classifier", "router"],
+  "description": "omp extension that adds a `decide` tool backed by TypeSafe System One (Jev): typed choice / noul / score questions over any state, answered with probabilities and confidence.",
+  "keywords": ["pi-package", "extension", "omp", "typesafe", "jev", "decide", "judge", "classifier", "router"],
   "type": "module",
   "license": "MIT",
   "author": "Mohammad Aziz",
