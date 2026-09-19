@@ -4,9 +4,8 @@
  * Wire contract — `POST {baseUrl}/v1/systemone`:
  *   request  { model, state, questions: { id: { type, instructions, criteria? } } }
  *   response { model, vendor, answers: { id: { type, ... } }, usage: {...} }
- * The Merge Dev gateway serves the same contract at `/v1/decisions` under the
- * model id `typesafe/jev-1.13`; the bridge in iAziz786/pi-merge-gateway-login
- * maps one to the other, so this client stays switched by the base URL alone.
+ * The base URL is the only switch: any endpoint implementing this contract
+ * works, and the model id is whatever that endpoint serves.
  *
  * Configuration follows omp's own TypeSafe judge so one env block serves both:
  *   TYPESAFE_BASE_URL      API root            (default https://api.typesafe.ai)

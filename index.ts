@@ -7,9 +7,8 @@
  * the on-demand counterpart of the judgments omp already makes internally.
  *
  * Endpoint and credentials come from the shared `TYPESAFE_*` block (see
- * decision.ts), so this tool and omp's built-in judge can point at the same
- * place: TypeSafe directly, or the Merge Dev gateway's `typesafe/jev-1.13`
- * through the bridge in iAziz786/pi-merge-gateway-login.
+ * decision.ts) — the same block omp's built-in TypeSafe judge reads — so both
+ * point at whatever host serves the contract.
  */
 
 import type { ExtensionAPI, ToolDefinition } from "@oh-my-pi/pi-coding-agent";

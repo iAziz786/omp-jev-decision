@@ -68,19 +68,11 @@ uses, so one block configures both:
 `~/.omp/agent/.env` is loaded into the environment by omp; a shell export works too. A
 missing key reports `TYPESAFE_API_KEY is not set` at call time instead of a 401.
 
-### Through the Merge Dev gateway
+### Other hosts
 
-The gateway serves the same System One contract — same request, same answers — at
-`/v1/decisions` under the model id `typesafe/jev-1.13`. The bridge in
-[iAziz786/pi-merge-gateway-login](https://github.com/iAziz786/pi-merge-gateway-login)
-maps the client's path and model id onto it, so pointing the base URL at the bridge is
-all that changes:
-
-```bash
-TYPESAFE_BASE_URL=http://127.0.0.1:8787
-TYPESAFE_API_KEY=<merge gateway key>
-TYPESAFE_DEFAULT_MODEL=typesafe/jev-1.13
-```
+`TYPESAFE_BASE_URL` is the switch: the request goes to `{base}/v1/systemone` with
+`TYPESAFE_DEFAULT_MODEL` as the model id, so any endpoint implementing the same
+contract works.
 
 ## Notes
 
