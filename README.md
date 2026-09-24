@@ -1,7 +1,5 @@
 > [!CAUTION]
-> **Deprecated and unmaintained.** This package is no longer maintained.
-> The GitHub repository is archived (read-only) and all npm versions are marked deprecated.
-> Do not use for new projects.
+> **Deprecated — use omp's built-in `judge(state, questions)` instead.** This package is unmaintained; the repository is archived (read-only) and all npm versions are deprecated.
 
 # omp-jev-decision
 
